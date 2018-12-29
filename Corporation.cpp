@@ -1,13 +1,22 @@
+#include "pch.h"
 #include "Corporation.h"
 
-Corporation::Corporation(string name, double amount)
+
+Corporation::Corporation()
 {
-    if(amount > 0)
-        _amount = amount;
+}
+
+Corporation::Corporation(string name)
+{
 	_name = name;
 }
 
-/*void Corporation::addShop(Shop shop)
+Corporation::Corporation(string name, double amount)
+{
+	_amount = amount;
+}
+
+void Corporation::addShop(Shop shop)
 {
 	_ShopsTab.push_back(shop);
 	_shopsNumber++;
@@ -59,24 +68,24 @@ void Corporation:: Actualisation()
 			_storage -= _ShopsTab[i].setSpecialStorage(_storage);
 	}
 }
-*/
+
 void Corporation::show()
 {
-	cout << "* Name :\t" << _name << "*" << endl;
-	cout << "* Amount :\t" << _amount << "*" << endl;
-	cout << "* Technologie number :\t"  << _technologiesNbr << "*" << endl;
-	cout << "* Shops number :\t" << _shopsNumber << "*" << endl;
-	cout << "* R et D Centers number :\t" << _RDCentersNumber << "*" << endl;
-	cout << "* Factories number :\t" << _factoriesNumber << "*" << endl;
-	/*for (int i = 0; i < _ShopsTab.size(); i++)
+	
+	cout << "name : " << _name << "\t";
+	cout << "amount : " << _amount << "\t";
+	cout << "technologie nb : " << _technologiesNbr << "\t";
+	cout << "shop nb : " << _shopsNumber << "\t";
+	cout << "r&d nb : " << _RDCentersNumber << "\t";
+	cout << "factories nb : " << _factoriesNumber << "\t";
+	for (int i = 0; i < _ShopsTab.size(); i++)
 		_ShopsTab[i].show();
 	for (int y = 0; y < _RDCentersTab.size(); y++)
 		_RDCentersTab[y].show();
 	for (int z = 0; z < _factoriesTab.size(); z++)
-		_factoriesTab[z].show();*/
+		_factoriesTab[z].show();
 }
 
 Corporation::~Corporation()
 {
-    //dtor
 }
